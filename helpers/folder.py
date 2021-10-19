@@ -2,23 +2,15 @@ import glob
 import os
 from abc import abstractmethod
 
-class IFolder:
-    @abstractmethod
-    def Clear(path:str):
-        raise NotImplementedError
-
-    @abstractmethod
-    def Create(path: str):
-        raise NotImplementedError
-
-class Folder(IFolder):
+class Folder():
     @staticmethod
-    def Clear(path: str):
-        r = glob.glob(path)
+    def Clear(folder:str):
+        r = glob.glob(folder)
         for i in r:
             os.remove(i)
 
     @staticmethod
-    def Create(path: str):
-        if not os.path.exists(path):
-            os.mkdir(path)
+    def Create(folder:str):
+        if not os.path.exists(folder):
+            os.mkdir(folder)
+        return folder

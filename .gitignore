@@ -131,4 +131,5 @@ dmypy.json
 #testing
 test.py
 test.md
-/Downloads
+/downloads
+telegram.py
